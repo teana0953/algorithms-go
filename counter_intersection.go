@@ -1,5 +1,7 @@
 package main
 
+import "sort"
+
 func FindIntersection(ary1 []int, ary2 []int) (results []int) {
 	ary3 := append(ary1, ary2...)
 	counter := map[int]int{}
@@ -13,6 +15,9 @@ func FindIntersection(ary1 []int, ary2 []int) (results []int) {
 			results = append(results, key)
 		}
 	}
+
+	// sorted
+	sort.Ints(results)
 
 	return results
 }
